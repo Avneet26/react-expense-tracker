@@ -37,7 +37,7 @@ function App() {
   }, [expenses]);
 
   return (
-    <div className="App">
+    <div className="container">
       <Header />
       <Dashboard />
       <History expenses={expenses} />
