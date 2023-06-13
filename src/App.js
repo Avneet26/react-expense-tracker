@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Dashboard from "./Components/Dashboard";
+import Header from "./Components/Header";
+import History from "./Components/History";
 
 function App() {
+  const [expenses, setExpenses] = useState([
+    { id: 1, name: "Salary", amount: 500 },
+    { id: 2, name: "Food", amount: -45 },
+    { id: 3, name: "Rent", amount: -250 },
+    { id: 4, name: "Stocks", amount: 350 },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Dashboard />
+      <History expenses={expenses} />
     </div>
   );
 }
